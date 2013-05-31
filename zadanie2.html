@@ -1,0 +1,37 @@
+<html>
+<head>
+<title> Задание 2 </title>
+</head>
+<body>
+<div id='mainForm'>
+	<form id="form">
+		<input id='formInput' type='text' size='60' value=""/>
+		<button id="sendButton">Send</button>
+	</form>
+</div>
+<script type="text/javascript">
+	document.getElementById('sendButton').onclick=function()
+	{
+		var value = document.getElementById('formInput').value;
+		var value_pattern = /[а|е|ё|и|о|у|ы|э|ю|я]/ig;
+		var prov = value_pattern.test(value);
+		if(!value)
+		{
+			alert("Вы ничего не ввели");
+			return false;
+		}
+		else
+		{
+			if(prov == true)
+			{
+				alert(value.replace(value_pattern, ""));
+			}
+			else
+			{
+				alert(value);
+			}
+		}
+	}
+</script>
+</body>
+</html>
